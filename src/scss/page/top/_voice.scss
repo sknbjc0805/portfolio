@@ -1,0 +1,105 @@
+/* voice */
+
+.review{
+  max-width:450px;
+  width: 100%;
+  margin: 0 auto;
+
+  @include media-breakpoint-up(xs){
+    position: relative;
+
+    &::before, &::after{
+      content: '';
+      width: 40px;
+      height: 64px;
+      position: absolute;
+      opacity: .4;
+    }
+  
+    &::before{
+      border-left: solid 2px $c-main;
+      border-top: solid 2px $c-main;
+      top: -28px;
+      left: -50px;
+    }
+  
+    &::after{
+      border-right: solid 2px $c-main;
+      border-bottom: solid 2px $c-main;
+      bottom: -28px;
+      right: -50px;
+    }
+  }
+
+
+
+  &-ttl{
+    @include mb4-8();
+    align-items: center;
+  }
+  &-img{
+    margin-right: 20px;
+    img{
+      width: 100%;
+    }
+
+    @include media-breakpoint-down(xs){
+      width: 80px;
+    }
+  }
+
+  &-desc{
+    @include media-breakpoint-down(xs){
+      flex: 1;
+    }
+  }
+  &-org{
+    @include mb4-1();
+  }
+
+  &-name{
+    &-honorific{
+      font-size: 1.4rem;
+
+      @include media-breakpoint-up(xs){
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &-txt{
+    position: relative;
+    display: inline-block;
+    
+
+    &::before,&::after{
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 1.6rem;
+      position: absolute;
+      color: $c-primary;
+    }
+
+    &::before{
+      left: 0;
+      top: -22px;
+      content: "\f10d";
+
+      @include media-breakpoint-up(xs){
+        left: -28px;
+        top: -12px;
+      }
+    }
+    &::after{
+      right: 0;
+      bottom: -22px;
+      content: "\f10e";
+
+      @include media-breakpoint-up(xs){
+        right: -28px;
+        bottom: -12px;
+      }
+    }
+  }
+
+}

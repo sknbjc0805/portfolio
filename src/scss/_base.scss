@@ -1,0 +1,130 @@
+/* base */
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.4rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: $c-white;
+  color: $c-main;
+  line-height: 1.5;
+  letter-spacing: 0.05rem;
+
+  @include media-breakpoint-up(xs) {
+    font-size: 1.6rem;
+  }
+}
+
+// .container{
+//   overflow: hidden;
+// }
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:active {
+    outline: none;
+  }
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+dt {
+  font-weight: normal;
+}
+
+dd {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+dl,
+ol,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+th {
+  font-weight: normal;
+}
+
+button:focus {
+  outline: none;
+}
+
+input[type="text"],
+input[type="email"] {
+  appearance: none;
+  background-color: $c-white;
+  background-image: none;
+  border: 1px solid $c-white;
+  border-radius: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1em;
+  padding: 0.4em 0.8em;
+  width: 100%;
+
+  &:focus {
+    border: 1px solid $c-light;
+    box-shadow: none;
+    outline: none;
+  }
+
+  //オートコンプリートの背景色削除
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px $c-white inset;
+  }
+}
+
+textarea {
+  appearance: none;
+  background-color: $c-white;
+  background-image: none;
+  border: 1px solid $c-white;
+  border-radius: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1em;
+  padding: 0.4em 0.8em;
+  width: 100%;
+
+  &:focus {
+    border: 1px solid $c-light;
+    box-shadow: none;
+    outline: none;
+  }
+}

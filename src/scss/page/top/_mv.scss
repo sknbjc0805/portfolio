@@ -1,0 +1,124 @@
+/* mv */
+
+.mv {
+  background: url(../../dist/img/mv-bg-sp.jpg) no-repeat 70% center/cover;
+  position: relative;
+  height: 100vh;
+
+  @media screen and (min-resolution: 2dppx) {
+    background: url(../../dist/img/mv-bg-sp@2x.jpg) no-repeat 70% center/cover;
+  }
+
+  @include media-breakpoint-up(xs) {
+    background: url(../../dist/img/mv-bg.jpg) no-repeat 70% center/cover;
+
+    @media screen and (min-resolution: 2dppx) {
+      background: url(../../dist/img/mv-bg@2x.jpg) no-repeat 70% center/cover;
+    }
+  }
+
+  animation-name: zoom;
+  animation-duration: 2s;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $c-dim;
+    opacity: .6;
+    content: "";
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+    opacity: 0;
+    animation-name: showGradually;
+    animation-duration: 1.5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  &-ttl {
+    font-size: 3.6rem;
+    @include mb4-6();
+    @include normal();
+
+    @include media-breakpoint-up(xs) {
+      font-size: 4.8rem;
+    }
+  }
+}
+
+/* スクロール */
+.scroll {
+  padding-top: 70px;
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: .9;
+  @include light();
+
+  &-arrow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 2px solid $c-white;
+    border-bottom: 2px solid $c-white;
+    transform: rotate(-45deg);
+    animation: scrollDown 1.5s infinite;
+    box-sizing: border-box;
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+
+
+@keyframes showGradually {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+

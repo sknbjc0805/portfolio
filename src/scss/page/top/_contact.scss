@@ -1,0 +1,100 @@
+/* contact */
+
+.contact {
+  &-txt {
+    @include mb4-5();
+  }
+}
+
+.form {
+  margin: 0 auto;
+  max-width: 600px;
+
+  &-item {
+    @include mb4-8();
+    width: 100%;
+  }
+
+  &-input {
+    width: 100%;
+    padding: 8px 16px;
+    box-shadow: 0px 5px 12px lighten($c-shadow, 50%);
+
+    :focus {
+      outline: 1px solid $c-primary;
+    }
+
+    ::placeholder {
+      opacity: .8; //反映されないTODO
+    }
+  }
+
+  &-label {
+    color: $c-dark;
+    display: inline-block;
+    @include mb4-2();
+
+    &--required {
+      &::after {
+        text-align: center;
+        content: "必須";
+        margin-left: 8px;
+        color: $c-white;
+        background-color: $c-primary;
+        padding: 2px 14px;
+        border-radius: 16px;
+        font-size: 1.2rem;
+
+        @include media-breakpoint-up(xs) {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  &-submit {
+    font-size: 1.8rem;
+    margin: 20px auto 0;
+    width: 100%;
+    height: 50px;
+    position: relative;
+
+    @include media-breakpoint-up(xs) {
+      max-width: 250px;
+    }
+
+    &::after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f101";
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      color: $c-white;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+//WP上書き
+span.wpcf7-not-valid-tip {
+  margin-top: 16px;
+  color: $c-warning;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f071";
+    padding-right: 8px;
+    font-size: 0.8em;
+  }
+}
+
+div.wpcf7-response-output {
+  border: none;
+  text-align: center;
+  color: $c-warning;
+  @include bold();
+}

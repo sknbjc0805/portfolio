@@ -1,0 +1,12 @@
+/* msg */
+.msg{
+  &-txt{
+    &:not(:last-child){
+      @include mb4-6();
+    }
+
+    @include media-breakpoint-up(xs) {
+      text-align: center;
+    }
+  }
+}

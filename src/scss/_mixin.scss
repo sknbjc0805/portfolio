@@ -1,0 +1,123 @@
+// mixinの定義
+
+// メディアクエリ
+
+
+@mixin shadow() {
+  box-shadow: 0px 5px 12px $c-shadow;
+}
+
+// Bootstrap4 移行ガイドを参考に作成 https://cccabinet.jpn.org/bootstrap4/layout/overview
+@mixin media-breakpoint-down($size) {
+  $breakpoint: 0;
+
+  // 極小デバイス（縦向きモバイル, 576px 未満）
+  @if $size==xs {
+    $breakpoint: 575.98px;
+  }
+
+  // 小デバイス（横向きモバイル, 768px 未満）
+  @if $size==sm {
+    $breakpoint: 767.98px;
+  }
+
+  // 中デバイス（タブレット, 992px 未満）
+  @if $size==md {
+    $breakpoint: 991.98px;
+  }
+
+  // 大デバイス（デスクトップ, 1200px 未満）
+  @if $size==lg {
+    $breakpoint: 1199.98px;
+  }
+
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-up($size) {
+  $breakpoint: 0;
+
+  // 小デバイス（横向きモバイル, 576px 以上）
+  @if $size==xs {
+    $breakpoint: 576px;
+  }
+
+  // 中デバイス（タブレット, 768px 以上）
+  @if $size==sm {
+    $breakpoint: 768px;
+  }
+
+  // 大デバイス（デスクトップ, 992px 以上）
+  @if $size==md {
+    $breakpoint: 992px;
+  }
+
+  // 特大デバイス（ワイド・デスクトップ, 1200px 以上）
+  @if $size==lg {
+    $breakpoint: 1200px;
+  }
+
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// margin-bottom (4倍数)
+@mixin mb4-1 {
+  margin-bottom: 4px;
+}
+
+@mixin mb4-2 {
+  margin-bottom: 8px;
+}
+
+@mixin mb4-3 {
+  margin-bottom: 12px;
+}
+
+@mixin mb4-4 {
+  margin-bottom: 16px;
+}
+
+@mixin mb4-5 {
+  margin-bottom: 20px;
+}
+
+@mixin mb4-6 {
+  margin-bottom: 24px;
+}
+
+@mixin mb4-7 {
+  margin-bottom: 28px;
+}
+
+@mixin mb4-8 {
+  margin-bottom: 32px;
+}
+
+@mixin mb4-9 {
+  margin-bottom: 36px;
+}
+
+@mixin mb4-10 {
+  margin-bottom: 40px;
+}
+
+// font-weight
+@mixin bold {
+  font-weight: 700;
+}
+
+@mixin medium {
+  font-weight: 500;
+}
+
+@mixin normal {
+  font-weight: 400;
+}
+
+@mixin light {
+  font-weight: 300;
+}

@@ -1,0 +1,12 @@
+/* notfound */
+
+.notfound{
+  &-txt{
+    &:first-child{
+      @include mb4-8();
+    }
+  }
+  &-box{
+    @include mb4-8();
+  }
+}

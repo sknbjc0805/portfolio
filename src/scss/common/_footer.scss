@@ -1,0 +1,11 @@
+/* footer */
+
+.footer{
+  padding: 15px 0;
+
+  @include media-breakpoint-up(xs) {
+    padding: 20px 0;
+  }
+
+  @include bold();
+}

@@ -1,0 +1,97 @@
+/* service */
+
+.service {
+  padding: 60px 0 40px;
+
+  @include media-breakpoint-up(xs) {
+    padding: 80px 0 44px;
+  }
+}
+
+
+.offer {
+  @include mb4-10();
+
+  @include media-breakpoint-up(xs) {
+    margin-bottom: 56px;
+  }
+
+  &-ttl{
+    position: relative;
+    @include mb4-8();
+    @include bold();
+    &::after{
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      background-color: $c-primary;
+      width: 56px;
+      height: 2px;
+
+    }
+  }
+
+  &-icon {
+    margin: 0 auto 20px;
+    width: 60px;
+    height: 60px;
+    background-color: $c-primary;
+    border-radius: 50%;
+    position: relative;
+
+    @include media-breakpoint-up(xs) {
+      width: 80px;
+      height: 80px;
+    }
+
+    &::before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 2.2rem;
+      position: absolute;
+      color: $c-white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include media-breakpoint-up(xs) {
+        font-size: 2.8rem;
+      }
+    }
+
+    &--coding{
+      &::before{
+        content: "\f121";
+      }
+    }
+    &--wordpress{
+      &::before{
+        font-family: "Font Awesome 5 Brands";
+        font-weight: 400;
+        content: "\f19a";
+      }
+    }
+    &--responsive{
+      &::before{
+        content: "\f3cd";
+      }
+    }
+    &--seo{
+      &::before{
+        content: "\f201";
+      }
+    }
+    &--translation{
+      &::before{
+        content: "\f1ab";
+      }
+    }
+    &--maintenance{
+      &::before{
+        content: "\f0ad";
+      }
+    }
+  }
+}
