@@ -127,7 +127,9 @@ Template Name:Home Page
 
       <?php
       global $post;
-      $myposts = get_posts(); ?>
+      $myposts = get_posts(array(
+        'posts_per_page' => 20
+      )); ?>
       <ul class="works-list row wow fadeInUp">
         <?php
         foreach ($myposts as $post) : setup_postdata($post); ?>
@@ -174,6 +176,7 @@ Template Name:Home Page
       wp_reset_postdata(); ?>
       <p class="price-note"><?php the_field('price_note1'); ?></p>
       <p class="price-note"><?php the_field('price_note2'); ?></p>
+      <p class="price-note"><?php the_field('price_note3'); ?></p>
       <a href="#" class="btn btn--primary price-btn">お問い合わせ</a>
     </div><!-- /.container  -->
   </section><!-- /.price  -->
