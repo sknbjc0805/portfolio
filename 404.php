@@ -8,7 +8,9 @@
       <div class="notfound-box wow fadeInUp center"><?php echo get_field('notfound_txt', 219); //404固定ページのID ?></div><!-- /.notfound-box  -->
       <?php
       global $post;
-      $myposts = get_posts(); ?>
+      $myposts = get_posts(array(
+        'posts_per_page' => 10
+      )); ?>
       <ul class="works-list row wow fadeInUp">
         <?php
         foreach ($myposts as $post) : setup_postdata($post); ?>
