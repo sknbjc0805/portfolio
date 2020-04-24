@@ -13,7 +13,7 @@
           <li class="bc-item"><?php the_title(); ?></li>
         </ul>
       </div>
-      <div class="post-time txt--sm">最終更新日：<time><?php the_modified_date('Y/m/d') ?></time></div>
+      <div class="post-time txt--sm">投稿日：<time><?php the_time('Y/m/d') ?></time></div>
       <div class="center">
         <h1 class="post-ttl txt--xl txt--dark"><?php the_title(); ?></h1>
         <?php if(!empty(get_field('link'))){ ?><p class="post-txt txt--primary"><a href="<?php the_field('link'); ?>" class="post-link center link--primary" target="_blank" rel="noopener noreferrer"><?php the_field('link'); ?></a></p><?php } ?>
