@@ -3,9 +3,7 @@
 .works {
   .col-md-6 {
     &:not(:last-child) {
-      @include media-breakpoint-down(sm) {
-        @include mb4-10();
-      }
+      margin-bottom: 32px;
     }
   }
 
@@ -32,8 +30,6 @@
   @include shadow();
 
   &-img {
-    @include mb4-4();
-
     img {
       width: 100%;
       height: auto;
