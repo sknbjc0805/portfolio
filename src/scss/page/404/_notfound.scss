@@ -1,6 +1,11 @@
 /* notfound */
 
 .notfound{
+
+  .col-md-4{
+    margin-bottom: 24px;
+  }
+  
   &-txt{
     &:first-child{
       @include mb4-8();
